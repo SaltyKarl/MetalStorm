@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>MetalStorm Weaponry</name>
+  <packageId>aw.MetalStorm</packageId>
+  <author>Aelflead Wayne</author>
+  <supportedVersions>
+	<li>1.5</li>
+  </supportedVersions>
+	<modDependencies>
+		<li>
+			<packageId>ceteam.combatextended</packageId>
+			<displayName>combatextended</displayName>
+		</li>
+	</modDependencies>
+	<loadAfter>
+		<li>ceteam.combatextended</li>
+	</loadAfter>
+  <description>
+When one barrel is not enough.
+</description>
+</ModMetaData>
