@@ -44,6 +44,11 @@
 		</statBases>
 		<ammoClass>FullMetalJacket</ammoClass>
 		<cookOffProjectile>Bullet_473x33mmCaseless_MS_FMJ</cookOffProjectile>
+		<modExtensions>
+			<li Class="MetalStorm.MetalStormCasingReturn">
+				<returnCasing>Ammo_473x33mmCaseless_MS_Sabot</returnCasing>
+			</li>
+		</modExtensions>
 	</ThingDef>
 
 	<ThingDef Class="CombatExtended.AmmoDef" ParentName="473x33mmCaseless_MSBase">
@@ -58,6 +63,11 @@
 		</statBases>
 		<ammoClass>IncendiaryAP</ammoClass>
 		<cookOffProjectile>Bullet_473x33mmCaseless_MS_Incendiary</cookOffProjectile>
+		<modExtensions>
+			<li Class="MetalStorm.MetalStormCasingReturn">
+				<returnCasing>Ammo_473x33mmCaseless_MS_Sabot</returnCasing>
+			</li>
+		</modExtensions>
 	</ThingDef>
 
 	<ThingDef Class="CombatExtended.AmmoDef" ParentName="473x33mmCaseless_MSBase">
@@ -72,6 +82,11 @@
 		</statBases>
 		<ammoClass>ExplosiveAP</ammoClass>
 		<cookOffProjectile>Bullet_473x33mmCaseless_MS_HE</cookOffProjectile>
+		<modExtensions>
+			<li Class="MetalStorm.MetalStormCasingReturn">
+				<returnCasing>Ammo_473x33mmCaseless_MS_Sabot</returnCasing>
+			</li>
+		</modExtensions>
 	</ThingDef>
 
 	<ThingDef Class="CombatExtended.AmmoDef" ParentName="473x33mmCaseless_MSBase">
@@ -87,6 +102,11 @@
 		</statBases>
 		<ammoClass>Sabot</ammoClass>
 		<cookOffProjectile>Bullet_473x33mmCaseless_MS_Sabot</cookOffProjectile>
+		<modExtensions>
+			<li Class="MetalStorm.MetalStormCasingReturn">
+				<returnCasing>Ammo_473x33mmCaseless_MS_Sabot</returnCasing>
+			</li>
+		</modExtensions>
 	</ThingDef>
 
 	<!-- ================== Projectiles ================== -->

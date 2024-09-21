@@ -35,7 +35,7 @@
 		<verbs>
 			<li Class="CombatExtended.VerbPropertiesCE">
 				<recoilAmount>1</recoilAmount>
-				<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+				<verbClass>MetalStorm.Verb_ShootCE_MetalStorm</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>Bullet_473x33mmCaseless_MS_FMJ</defaultProjectile>
 				<burstShotCount>6</burstShotCount>
