@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- ==================== AmmoSet ========================== -->
+
+	<CombatExtended.AmmoSetDef>
+		<defName>AmmoSet_473x33mmCaseless_MS</defName>
+		<label>4.73x33mm Caseless(Metal Storm)</label>
+		<ammoTypes>
+			<Ammo_473x33mmCaseless_MS_FMJ>Bullet_473x33mmCaseless_MS_FMJ</Ammo_473x33mmCaseless_MS_FMJ>
+			<Ammo_473x33mmCaseless_MS_Incendiary>Bullet_473x33mmCaseless_MS_Incendiary</Ammo_473x33mmCaseless_MS_Incendiary>
+			<Ammo_473x33mmCaseless_MS_HE>Bullet_473x33mmCaseless_MS_HE</Ammo_473x33mmCaseless_MS_HE>
+			<Ammo_473x33mmCaseless_MS_Sabot>Bullet_473x33mmCaseless_MS_Sabot</Ammo_473x33mmCaseless_MS_Sabot>
+		</ammoTypes>
+		<similarTo>AmmoSet_RifleIntermediate</similarTo>
+	</CombatExtended.AmmoSetDef>
+
+	<!-- ==================== Ammo ========================== -->
+
+	<ThingDef Class="CombatExtended.AmmoDef" Name="473x33mmCaseless_MSBase" ParentName="SmallAmmoBase" Abstract="True">
+		<description>Caseless bullet with a solid propellant enveloping the projectile.</description>
+		<statBases>
+			<Mass>0.06</Mass>
+			<Bulk>0.06</Bulk>
+		</statBases>
+		<tradeTags>
+			<li>CE_AutoEnableTrade</li>
+			<li>CE_AutoEnableCrafting</li>
+		</tradeTags>
+		<thingCategories>
+			<li>Ammo473x33mmCaseless</li>
+		</thingCategories>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="473x33mmCaseless_MSBase">
+		<defName>Ammo_473x33mmCaseless_MS_FMJ</defName>
+		<label>4.73x33mm Caseless-Metal Storm (FMJ)</label>
+		<graphicData>
+			<texPath>Things/Ammo/Rifle/FMJ</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>0.24</MarketValue>
+		</statBases>
+		<ammoClass>FullMetalJacket</ammoClass>
+		<cookOffProjectile>Bullet_473x33mmCaseless_MS_FMJ</cookOffProjectile>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="473x33mmCaseless_MSBase">
+		<defName>Ammo_473x33mmCaseless_MS_Incendiary</defName>
+		<label>4.73x33mm Caseless-Metal Storm (AP-I)</label>
+		<graphicData>
+			<texPath>Things/Ammo/Rifle/Incendiary</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>0.36</MarketValue>
+		</statBases>
+		<ammoClass>IncendiaryAP</ammoClass>
+		<cookOffProjectile>Bullet_473x33mmCaseless_MS_Incendiary</cookOffProjectile>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="473x33mmCaseless_MSBase">
+		<defName>Ammo_473x33mmCaseless_MS_HE</defName>
+		<label>4.73x33mm Caseless-Metal Storm (AP-HE)</label>
+		<graphicData>
+			<texPath>Things/Ammo/Rifle/HE</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>0.48</MarketValue>
+		</statBases>
+		<ammoClass>ExplosiveAP</ammoClass>
+		<cookOffProjectile>Bullet_473x33mmCaseless_MS_HE</cookOffProjectile>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="473x33mmCaseless_MSBase">
+		<defName>Ammo_473x33mmCaseless_MS_Sabot</defName>
+		<label>4.73x33mm Caseless-Metal Storm (Sabot)</label>
+		<graphicData>
+			<texPath>Things/Ammo/Rifle/Sabot</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>0.30</MarketValue>
+			<Mass>0.048</Mass>
+		</statBases>
+		<ammoClass>Sabot</ammoClass>
+		<cookOffProjectile>Bullet_473x33mmCaseless_MS_Sabot</cookOffProjectile>
+	</ThingDef>
+
+	<!-- ================== Projectiles ================== -->
+
+	<ThingDef Name="Base473x33mmCaseless_MSBullet" ParentName="BaseBulletCE" Abstract="true">
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>Bullet</damageDef>
+			<speed>168</speed>
+			<pelletCount>6</pelletCount>
+			<spreadMult>1.5</spreadMult>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="Base473x33mmCaseless_MSBullet">
+		<defName>Bullet_473x33mmCaseless_MS_FMJ</defName>
+		<label>4.73mm Caseless-Metal Storm bullet (FMJ)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>12</damageAmountBase>
+			<armorPenetrationSharp>6</armorPenetrationSharp>
+			<armorPenetrationBlunt>28.5</armorPenetrationBlunt>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="Base473x33mmCaseless_MSBullet">
+		<defName>Bullet_473x33mmCaseless_MS_Incendiary</defName>
+		<label>4.73mm Caseless-Metal Storm bullet (AP-I)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>8</damageAmountBase>
+			<armorPenetrationSharp>12</armorPenetrationSharp>
+			<armorPenetrationBlunt>28.5</armorPenetrationBlunt>
+			<secondaryDamage>
+				<li>
+					<def>Flame_Secondary</def>
+					<amount>3</amount>
+				</li>
+			</secondaryDamage>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="Base473x33mmCaseless_MSBullet">
+		<defName>Bullet_473x33mmCaseless_MS_HE</defName>
+		<label>4.73mm Caseless-Metal Storm bullet (AP-HE)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>12</damageAmountBase>
+			<armorPenetrationSharp>6</armorPenetrationSharp>
+			<armorPenetrationBlunt>28.5</armorPenetrationBlunt>
+			<secondaryDamage>
+				<li>
+					<def>Bomb_Secondary</def>
+					<amount>4</amount>
+				</li>
+			</secondaryDamage>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="Base473x33mmCaseless_MSBullet">
+		<defName>Bullet_473x33mmCaseless_MS_Sabot</defName>
+		<label>4.73mm Caseless-Metal Storm bullet (Sabot)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>6</damageAmountBase>
+			<armorPenetrationSharp>21</armorPenetrationSharp>
+			<armorPenetrationBlunt>36.58</armorPenetrationBlunt>
+			<speed>228</speed>
+			<spreadMult>1.15</spreadMult>
+		</projectile>
+	</ThingDef>
+
+	<!-- ==================== Recipes ========================== -->
+
+	<RecipeDef ParentName="AmmoRecipeBase">
+		<defName>MakeAmmo_473x33mmCaseless_MS_FMJ</defName>
+		<label>make 4.73x33mm Caseless-Metal Storm (FMJ) cartridge x500</label>
+		<description>Craft 500 4.73x33mm Caseless-Metal Storm (FMJ) cartridges.</description>
+		<jobString>Making 4.73x33mm Caseless-Metal Storm (FMJ) cartridges.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>60</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_473x33mmCaseless_MS_FMJ>500</Ammo_473x33mmCaseless_MS_FMJ>
+		</products>
+		<workAmount>3000</workAmount>
+	</RecipeDef>
+
+	<RecipeDef ParentName="AdvancedAmmoRecipeBase">
+		<defName>MakeAmmo_473x33mmCaseless_MS_Incendiary</defName>
+		<label>make 4.73x33mm Caseless-Metal Storm (AP-I) cartridge x500</label>
+		<description>Craft 500 4.73x33mm Caseless-Metal Storm (AP-I) cartridges.</description>
+		<jobString>Making 4.73x33mm Caseless-Metal Storm (AP-I) cartridges.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>60</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Prometheum</li>
+					</thingDefs>
+				</filter>
+				<count>6</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+				<li>Prometheum</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_473x33mmCaseless_MS_Incendiary>500</Ammo_473x33mmCaseless_MS_Incendiary>
+		</products>
+		<workAmount>4200</workAmount>
+	</RecipeDef>
+
+	<RecipeDef ParentName="AdvancedAmmoRecipeBase">
+		<defName>MakeAmmo_473x33mmCaseless_MS_HE</defName>
+		<label>make 4.73x33mm Caseless-Metal Storm (AP-HE) cartridge x500</label>
+		<description>Craft 500 4.73x33mm Caseless-Metal Storm (AP-HE) cartridges.</description>
+		<jobString>Making 4.73x33mm Caseless-Metal Storm (AP-HE) cartridges.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>60</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FSX</li>
+					</thingDefs>
+				</filter>
+				<count>12</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+				<li>FSX</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_473x33mmCaseless_MS_HE>500</Ammo_473x33mmCaseless_MS_HE>
+		</products>
+		<workAmount>5400</workAmount>
+	</RecipeDef>
+
+	<RecipeDef ParentName="AdvancedAmmoRecipeBase">
+		<defName>MakeAmmo_473x33mmCaseless_MS_Sabot</defName>
+		<label>make 4.73x33mm Caseless-Metal Storm (Sabot) cartridge x500</label>
+		<description>Craft 500 4.73x33mm Caseless-Metal Storm (Sabot) cartridges.</description>
+		<jobString>Making 4.73x33mm Caseless-Metal Storm (Sabot) cartridges.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>36</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Uranium</li>
+					</thingDefs>
+				</filter>
+				<count>6</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</filter>
+				<count>6</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+				<li>Uranium</li>
+				<li>Chemfuel</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_473x33mmCaseless_MS_Sabot>500</Ammo_473x33mmCaseless_MS_Sabot>
+		</products>
+		<workAmount>3600</workAmount>
+	</RecipeDef>
+
+</Defs>
