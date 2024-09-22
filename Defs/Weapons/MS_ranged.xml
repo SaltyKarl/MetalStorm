@@ -38,10 +38,11 @@
 				<verbClass>MetalStorm.Verb_ShootCE_MetalStorm</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>Bullet_473x33mmCaseless_MS_FMJ</defaultProjectile>
-				<burstShotCount>6</burstShotCount>
+				<burstShotCount>5</burstShotCount>
 				<ticksBetweenBurstShots>4</ticksBetweenBurstShots>
+				<ammoConsumedPerShotCount>1</ammoConsumedPerShotCount>
 				<warmupTime>0.5</warmupTime>
-				<range>31</range>
+				<range>28</range>
 				<soundCast>Shot_ChargeRifle</soundCast>
 				<soundCastTail>GunTail_Medium</soundCastTail>
 				<muzzleFlashScale>9</muzzleFlashScale>

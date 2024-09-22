@@ -18,10 +18,10 @@
 	<!-- ==================== Ammo ========================== -->
 
 	<ThingDef Class="CombatExtended.AmmoDef" Name="473x33mmCaseless_MSBase" ParentName="SmallAmmoBase" Abstract="True">
-		<description>Caseless bullet with a solid propellant enveloping the projectile.</description>
+		<description>Telescoping caseless ammo incased in parallel barrels for metal storm weapons.</description>
 		<statBases>
-			<Mass>0.06</Mass>
-			<Bulk>0.06</Bulk>
+			<Mass>0.08</Mass>
+			<Bulk>0.08</Bulk>
 		</statBases>
 		<tradeTags>
 			<li>CE_AutoEnableTrade</li>
@@ -32,11 +32,48 @@
 		</thingCategories>
 	</ThingDef>
 
+	<ThingDef ParentName="ResourceBase">
+		<defName>Ammo_473x33mmCaseless_MS_SPENT</defName>
+		<label>4.73x33mm Caseless-Metal Storm (SPENT)</label>
+		<description>Spent 4.73x33mm metal storm ammo casing.</description>
+		<category>Item</category>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<useHitPoints>true</useHitPoints>
+		<statBases>
+			<MaxHitPoints>200</MaxHitPoints>
+			<Beauty>-5</Beauty>
+			<Flammability>1</Flammability>
+			<DeteriorationRate>2</DeteriorationRate>
+			<Mass>0.04</Mass>
+			<Bulk>0.08</Bulk>
+			<MarketValue>0.00</MarketValue>
+		</statBases>
+		<selectable>true</selectable>
+		<altitudeLayer>Item</altitudeLayer>
+		<stackLimit>5000</stackLimit>
+		<soundInteract>Metal_Drop</soundInteract>
+		<soundDrop>Metal_Drop</soundDrop>
+		<comps>
+			<li Class="CompProperties_Forbiddable" />
+		</comps>
+		<alwaysHaulable>true</alwaysHaulable>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<rotatable>false</rotatable>
+		<pathCost>15</pathCost>
+		<techLevel>Industrial</techLevel>
+		<tradeability>None</tradeability>
+		<tickerType>Normal</tickerType>
+		<graphicData>
+			<texPath>Things/Ammo/MS4.73x33mm/Spent</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+	</ThingDef>
+
 	<ThingDef Class="CombatExtended.AmmoDef" ParentName="473x33mmCaseless_MSBase">
 		<defName>Ammo_473x33mmCaseless_MS_FMJ</defName>
 		<label>4.73x33mm Caseless-Metal Storm (FMJ)</label>
 		<graphicData>
-			<texPath>Things/Ammo/Rifle/FMJ</texPath>
+			<texPath>Things/Ammo/MS4.73x33mm/FMJ</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<statBases>
@@ -46,7 +83,7 @@
 		<cookOffProjectile>Bullet_473x33mmCaseless_MS_FMJ</cookOffProjectile>
 		<modExtensions>
 			<li Class="MetalStorm.MetalStormCasingReturn">
-				<returnCasing>Ammo_473x33mmCaseless_MS_Sabot</returnCasing>
+				<returnCasing>Ammo_473x33mmCaseless_MS_SPENT</returnCasing>
 			</li>
 		</modExtensions>
 	</ThingDef>
@@ -55,7 +92,7 @@
 		<defName>Ammo_473x33mmCaseless_MS_Incendiary</defName>
 		<label>4.73x33mm Caseless-Metal Storm (AP-I)</label>
 		<graphicData>
-			<texPath>Things/Ammo/Rifle/Incendiary</texPath>
+			<texPath>Things/Ammo/MS4.73x33mm/AP-I</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<statBases>
@@ -65,7 +102,7 @@
 		<cookOffProjectile>Bullet_473x33mmCaseless_MS_Incendiary</cookOffProjectile>
 		<modExtensions>
 			<li Class="MetalStorm.MetalStormCasingReturn">
-				<returnCasing>Ammo_473x33mmCaseless_MS_Sabot</returnCasing>
+				<returnCasing>Ammo_473x33mmCaseless_MS_SPENT</returnCasing>
 			</li>
 		</modExtensions>
 	</ThingDef>
@@ -74,7 +111,7 @@
 		<defName>Ammo_473x33mmCaseless_MS_HE</defName>
 		<label>4.73x33mm Caseless-Metal Storm (AP-HE)</label>
 		<graphicData>
-			<texPath>Things/Ammo/Rifle/HE</texPath>
+			<texPath>Things/Ammo/MS4.73x33mm/HE</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<statBases>
@@ -84,7 +121,7 @@
 		<cookOffProjectile>Bullet_473x33mmCaseless_MS_HE</cookOffProjectile>
 		<modExtensions>
 			<li Class="MetalStorm.MetalStormCasingReturn">
-				<returnCasing>Ammo_473x33mmCaseless_MS_Sabot</returnCasing>
+				<returnCasing>Ammo_473x33mmCaseless_MS_SPENT</returnCasing>
 			</li>
 		</modExtensions>
 	</ThingDef>
@@ -93,18 +130,17 @@
 		<defName>Ammo_473x33mmCaseless_MS_Sabot</defName>
 		<label>4.73x33mm Caseless-Metal Storm (Sabot)</label>
 		<graphicData>
-			<texPath>Things/Ammo/Rifle/Sabot</texPath>
+			<texPath>Things/Ammo/MS4.73x33mm/AP</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<statBases>
 			<MarketValue>0.30</MarketValue>
-			<Mass>0.048</Mass>
 		</statBases>
 		<ammoClass>Sabot</ammoClass>
 		<cookOffProjectile>Bullet_473x33mmCaseless_MS_Sabot</cookOffProjectile>
 		<modExtensions>
 			<li Class="MetalStorm.MetalStormCasingReturn">
-				<returnCasing>Ammo_473x33mmCaseless_MS_Sabot</returnCasing>
+				<returnCasing>Ammo_473x33mmCaseless_MS_SPENT</returnCasing>
 			</li>
 		</modExtensions>
 	</ThingDef>
@@ -120,7 +156,7 @@
 			<damageDef>Bullet</damageDef>
 			<speed>168</speed>
 			<pelletCount>6</pelletCount>
-			<spreadMult>2.5</spreadMult>
+			<spreadMult>4.5</spreadMult>
 		</projectile>
 	</ThingDef>
 
@@ -174,7 +210,7 @@
 			<armorPenetrationSharp>21</armorPenetrationSharp>
 			<armorPenetrationBlunt>36.58</armorPenetrationBlunt>
 			<speed>228</speed>
-			<spreadMult>1.5</spreadMult>
+			<spreadMult>2.5</spreadMult>
 		</projectile>
 	</ThingDef>
 
@@ -192,7 +228,7 @@
 						<li>Steel</li>
 					</thingDefs>
 				</filter>
-				<count>60</count>
+				<count>80</count>
 			</li>
 		</ingredients>
 		<fixedIngredientFilter>
@@ -218,7 +254,7 @@
 						<li>Steel</li>
 					</thingDefs>
 				</filter>
-				<count>60</count>
+				<count>80</count>
 			</li>
 			<li>
 				<filter>
@@ -226,7 +262,7 @@
 						<li>Prometheum</li>
 					</thingDefs>
 				</filter>
-				<count>6</count>
+				<count>8</count>
 			</li>
 		</ingredients>
 		<fixedIngredientFilter>
@@ -253,7 +289,7 @@
 						<li>Steel</li>
 					</thingDefs>
 				</filter>
-				<count>60</count>
+				<count>80</count>
 			</li>
 			<li>
 				<filter>
@@ -261,7 +297,7 @@
 						<li>FSX</li>
 					</thingDefs>
 				</filter>
-				<count>12</count>
+				<count>16</count>
 			</li>
 		</ingredients>
 		<fixedIngredientFilter>
@@ -288,7 +324,7 @@
 						<li>Steel</li>
 					</thingDefs>
 				</filter>
-				<count>36</count>
+				<count>48</count>
 			</li>
 			<li>
 				<filter>
@@ -296,7 +332,7 @@
 						<li>Uranium</li>
 					</thingDefs>
 				</filter>
-				<count>6</count>
+				<count>8</count>
 			</li>
 			<li>
 				<filter>
@@ -304,7 +340,7 @@
 						<li>Chemfuel</li>
 					</thingDefs>
 				</filter>
-				<count>6</count>
+				<count>8</count>
 			</li>
 		</ingredients>
 		<fixedIngredientFilter>
@@ -318,6 +354,72 @@
 			<Ammo_473x33mmCaseless_MS_Sabot>500</Ammo_473x33mmCaseless_MS_Sabot>
 		</products>
 		<workAmount>3600</workAmount>
+	</RecipeDef>
+
+	<RecipeDef>
+		<defName>ReclaimMetalStormCasing473x33mm</defName>
+		<label>reclaim materials from metalstorm spent casing</label>
+		<description>Use heat and strong electromagnets to break down metalstorm spent casing into useful resources.</description>
+		<jobString>Smelting spent casing.</jobString>
+		<effectWorking>Smelt</effectWorking>
+		<soundWorking>Recipe_Smelt</soundWorking>
+		<workAmount>2750</workAmount>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Ammo_473x33mmCaseless_MS_SPENT</li>
+					</thingDefs>
+				</filter>
+				<count>600</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Ammo_473x33mmCaseless_MS_SPENT</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Steel>20</Steel>
+		</products>
+		<recipeUsers Inherit="False">
+			<li>ElectricSmelter</li>
+		</recipeUsers>
+	</RecipeDef>
+
+	<RecipeDef>
+		<defName>RecycleMetalStormCasing473x33mm</defName>
+		<label>recycle materials from metalstorm spent casing</label>
+		<description>Use advanced fabrication tools to recycle metalstorm spent casing into useful resources.</description>
+		<jobString>Recycling metalstorm spent casing.</jobString>
+		<effectWorking>Smelt</effectWorking>
+		<soundWorking>Recipe_Smelt</soundWorking>
+		<workAmount>3500</workAmount>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Ammo_473x33mmCaseless_MS_SPENT</li>
+					</thingDefs>
+				</filter>
+				<count>600</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Ammo_473x33mmCaseless_MS_SPENT</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Steel>35</Steel>
+		</products>
+		<recipeUsers Inherit="False">
+			<li>FabricationBench</li>
+		</recipeUsers>
 	</RecipeDef>
 
 </Defs>
