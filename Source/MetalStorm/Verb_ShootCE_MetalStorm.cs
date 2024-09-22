@@ -8,28 +8,15 @@ namespace MetalStorm
 {
     public class Verb_ShootCE_MetalStorm : Verb_ShootCE
     {
-        public override bool TryCastShot()
+        protected override bool OnCastSuccessful()
         {
-            //Reduce ammunition
-            if (CompAmmo != null)
+            if (ShooterPawn is not null && CompAmmo.CurrentAmmo.GetModExtension<MetalStormCasingReturn>().returnCasing is not null)
             {
-                if (ShooterPawn != null && CompAmmo.CurrentAmmo.GetModExtension<MetalStormCasingReturn>().returnCasing != null)
-                {
-                    Thing thing = ThingMaker.MakeThing(CompAmmo.CurrentAmmo.GetModExtension<MetalStormCasingReturn>().returnCasing);
-                    thing.stackCount = 1;
-                    ShooterPawn.inventory.innerContainer.TryAdd(thing);
-                }
-
-                if (!CompAmmo.TryReduceAmmoCount(((CompAmmo.Props.ammoSet != null) ? CompAmmo.Props.ammoSet.ammoConsumedPerShot : 1) * VerbPropsCE.ammoConsumedPerShotCount))
-                {
-                    return false;
-                }
+                Thing thing = ThingMaker.MakeThing(CompAmmo.CurrentAmmo.GetModExtension<MetalStormCasingReturn>().returnCasing);
+                thing.stackCount = 1;
+                ShooterPawn.inventory.innerContainer.TryAdd(thing);
             }
-            if (base.TryCastShot())
-            {
-                return OnCastSuccessful();
-            }
-            return false;
+            return base.OnCastSuccessful();
         }
     }
 }
