@@ -1,14 +1,11 @@
 ﻿using CombatExtended;
-using RimWorld;
-using UnityEngine;
-using Verse.Sound;
 using Verse;
 
 namespace MetalStorm
 {
     public class Verb_ShootCE_MetalStorm : Verb_ShootCE
     {
-        protected override bool OnCastSuccessful()
+        public override bool TryCastShot()
         {
             if (ShooterPawn is not null && CompAmmo.CurrentAmmo.GetModExtension<MetalStormCasingReturn>().returnCasing is not null)
             {
@@ -16,7 +13,7 @@ namespace MetalStorm
                 thing.stackCount = 1;
                 ShooterPawn.inventory.innerContainer.TryAdd(thing);
             }
-            return base.OnCastSuccessful();
+            return base.TryCastShot();
         }
     }
 }
